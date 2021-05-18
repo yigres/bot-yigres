@@ -1,6 +1,8 @@
 const TelegramApi = require('node-telegram-bot-api');
 const { gameOptions, againOptions} = require('./options');
-const token = '1855191476:AAFfJiV3XjL1VqJxCgPbTVLDcBEhSexMRhI';
+// const token = '1855191476:AAFfJiV3XjL1VqJxCgPbTVLDcBEhSexMRhI';
+const token = '1890562992:AAEAatHwVd0-3VPUmU6wYb1DVofi2kHbGZs';
+
 
 const bot = new TelegramApi(token, {polling: true});
 
@@ -30,14 +32,14 @@ const start = () => {
     }
   
     if (text === '/info') {
-      return bot.sendMessage(chatId, `Тебя зовут ${msg.from.first_name} ${msg.from.last_name}`);
+      return bot.sendMessage(chatId, `Тебя зовут ${msg.from.first_name}`);
     }
 
     if (text === '/game') {
       return startGame(chatId);
     }
 
-    return bot.sendMessage(chatId, 'Я тебя не понимаю, попробу   еще раз!');
+    return bot.sendMessage(chatId, 'Я тебя не понимаю, попробуй еще раз!');
   })
 
   bot.on('callback_query', (msg) => {
