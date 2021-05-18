@@ -28,7 +28,8 @@ const start = () => {
   
     if (text === '/start') {
       await bot.sendSticker(chatId, 'https://tlgrm.eu/_/stickers/ea5/382/ea53826d-c192-376a-b766-e5abc535f1c9/7.webp');
-      return bot.sendMessage(chatId, `Добро пожаловать в телеграмм бот yigres`);  
+      await bot.sendMessage(chatId, `Добро пожаловать в телеграмм бот yigres`);  
+      return bot.sendMessage(chatId, 'Воспользуйся меню! (иконка справа от строки набра текста, левее смайла)');
     }
   
     if (text === '/info') {
